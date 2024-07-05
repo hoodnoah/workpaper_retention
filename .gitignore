@@ -1,2 +1,10 @@
 *.pdf
 Final Reports
+
+# python
+venv
+__pycache__
+
+# python testing
+.pytest_cache
+test_fixtures
