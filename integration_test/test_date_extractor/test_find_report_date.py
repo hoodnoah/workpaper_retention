@@ -44,6 +44,34 @@ TEST_SCANNED = [
         "integration_test/test_date_extractor/test_fixtures/scanned/scanned_3.PDF",
         date(2015, 5, 6),
     ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_4.PDF",
+        date(2019, 8, 7),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_5.pdf",
+        date(2021, 5, 6),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_6.pdf",
+        date(2021, 1, 7),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_7.PDF",
+        date(2016, 2, 22),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_8.pdf",
+        date(2020, 12, 18),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_9.PDF",
+        date(2016, 3, 22),
+    ),
+    (
+        "integration_test/test_date_extractor/test_fixtures/scanned/scanned_10.PDF",
+        date(2017, 3, 16),
+    ),
 ]
 
 
