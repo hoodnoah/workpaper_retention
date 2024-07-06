@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+from datetime import datetime, date
 
 # types
 from typing import Optional
@@ -25,3 +26,21 @@ def get_client_name(filepath: Path) -> Optional[str]:
     client_name = client_name.strip()
 
     return client_name.upper()
+
+
+def get_fye(path: Path) -> Optional[date]:
+    match_result = re.search(DATE_REGEX, path.stem)
+
+    if not match_result:
+        return None
+
+    date_str = match_result.group()
+
+    if len(date_str) == 6:
+        date = datetime.strptime(date_str, "%m%d%y").date()
+        return date
+    else:
+        date = datetime.strptime(date_str, "%m%d%Y").date()
+        return date
+
+    return None
