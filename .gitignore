@@ -1,4 +1,5 @@
 *.pdf
+*.PDF
 Final Reports
 
 # python
@@ -8,3 +9,6 @@ __pycache__
 # python testing
 .pytest_cache
 test_fixtures
+
+# tesseract data
+tessdata
