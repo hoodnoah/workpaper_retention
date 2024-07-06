@@ -19,7 +19,7 @@ def _parse_date_string(date_string: str) -> Optional[date]:
     return date
 
 
-def is_scanned_file(doc: fitz.Document) -> bool:
+def _is_scanned_file(doc: fitz.Document) -> bool:
     # try and locate any text on the first 3 pages
     for page_num in range(min(MAX_NUM_SEARCH_PAGES, len(doc))):
         if doc.get_page_text(page_num) == "":
@@ -28,11 +28,11 @@ def is_scanned_file(doc: fitz.Document) -> bool:
     return False
 
 
-def get_text(doc: fitz.Document) -> str:
+def _get_text(doc: fitz.Document) -> str:
     num_search_pages = min(MAX_NUM_SEARCH_PAGES, len(doc))
 
     text = ""
-    if not is_scanned_file(doc):
+    if not _is_scanned_file(doc):
         for page_num in range(num_search_pages):
             text += doc.get_page_text(page_num)
     else:
@@ -45,7 +45,7 @@ def get_text(doc: fitz.Document) -> str:
 
 def get_report_date(filepath: Path) -> Optional[date]:
     with fitz.open(filepath) as doc:
-        text = get_text(doc)
+        text = _get_text(doc)
 
         dates_text = re.findall(DATE_REGEX, text)
         dates_parsed = [_parse_date_string(text) for text in dates_text]
