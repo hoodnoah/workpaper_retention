@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Callable, Optional
 
 # libs
-from src.lib.date_extractor import get_report_date
-from src.lib.client import get_client_name, get_fye
+from lib.date_extractor import get_report_date
+from lib.client import get_client_name, get_fye
 
 DESTRUCTION_DELTA = relativedelta(years=5)
 LEAP_YEAR_DELTA = relativedelta(days=1)

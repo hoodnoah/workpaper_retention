@@ -15,8 +15,11 @@ DATE_REGEX = re.compile(
 
 
 def _parse_date_string(date_string: str) -> Optional[date]:
-    date = datetime.strptime(date_string, "%B %d, %Y").date()
-    return date
+    try:
+        date = datetime.strptime(date_string, "%B %d, %Y").date()
+        return date
+    except ValueError:
+        return None
 
 
 def _is_scanned_file(doc: fitz.Document) -> bool:

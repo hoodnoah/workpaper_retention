@@ -9,6 +9,13 @@ __pycache__
 # python testing
 .pytest_cache
 test_fixtures
+test_inputs
 
 # tesseract data
 tessdata
+
+# logging
+*.log
+
+# output
+*.csv
