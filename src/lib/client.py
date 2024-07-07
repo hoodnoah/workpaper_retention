@@ -42,5 +42,3 @@ def get_fye(path: Path) -> Optional[date]:
     else:
         date = datetime.strptime(date_str, "%m%d%Y").date()
         return date
-
-    return None
